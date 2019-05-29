@@ -39,7 +39,7 @@ public class Server {
 	public static void main(String[] args) throws Exception {
 		
 		
-		Server app = new Server("145.239.82.150");
+		Server app = new Server("127.0.0.1");
 		System.out.println(
 				"\r\nRunning Server: " + "Host=" + app.getSocketAddress().getHostAddress() + " Port=" + app.getPort());
 

@@ -18,22 +18,15 @@ public class Window extends JFrame implements ActionListener{
 	JButton button = new JButton("send");
 	String message = new String();
 	Client client;
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	public Window() throws UnknownHostException, Exception {
 		
-		client = new Client(InetAddress.getByName("145.239.82.150"), 6666);
+		client = new Client(InetAddress.getByName("127.0.0.1"), 6666);
 
 		System.out.println("\r\nConnected to Server: " + client.socket.getInetAddress());
-		try {
-			client.start();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 		
 		setLayout(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,9 +58,6 @@ public class Window extends JFrame implements ActionListener{
 		
 	}
 
-	public String getMessage()
-	{
-		return message;
-	}
+	
 	
 }
