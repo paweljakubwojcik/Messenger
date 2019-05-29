@@ -12,11 +12,20 @@ public class Server {
 	private Socket clientSocket;
 	private PrintWriter out;
 	private BufferedReader in;
+	
 
+	// startuje nowy server
+	public static void main(String[] args) {
+		Server server = new Server();
+		server.start(6666); // port 6666
+	}
+/**
+ * @param port
+ * 
+ */
 	public void start(int port) {
 		String greeting = null;
 		try {
-
 			serverSocket = new ServerSocket(port);
 			clientSocket = serverSocket.accept();
 			out = new PrintWriter(clientSocket.getOutputStream(), true);
@@ -52,9 +61,5 @@ public class Server {
 		}
 	}
 
-	public static void main(String[] args) {
-		Server server = new Server();
-		server.start(6666);
-	}
 
 }

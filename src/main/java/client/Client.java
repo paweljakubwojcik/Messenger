@@ -1,5 +1,7 @@
 package client;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,6 +15,15 @@ public class Client {
 	private BufferedReader in;
 
 	public static void main(String[] args) {
+		https://www.pegaxchange.com/2017/12/07/simple-tcp-ip-server-client-java/
+		new Client();
+	}
+
+	public Client() {
+		// "10.44.63.66"
+		startConnection("127.0.0.1", 6666);
+		String response = sendMessage("hello server");
+		assertEquals("hello client", response);
 	}
 
 	public void startConnection(String ip, int port) {
