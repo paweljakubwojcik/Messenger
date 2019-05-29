@@ -37,7 +37,7 @@ public class Server {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Server app = new Server(args[0]);
+		Server app = new Server("10.44.63.66");
 		System.out.println(
 				"\r\nRunning Server: " + "Host=" + app.getSocketAddress().getHostAddress() + " Port=" + app.getPort());
 
