@@ -6,6 +6,8 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
+import graphics.Window;
+
 public class Client {
 	private Socket socket;
 	private Scanner scanner;
@@ -26,7 +28,9 @@ public class Client {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Client client = new Client(InetAddress.getByName("10.44.63.66"), Integer.parseInt(6666));
+		new Window();
+		
+		Client client = new Client(InetAddress.getByName("145.239.82.150"), 6666);
 
 		System.out.println("\r\nConnected to Server: " + client.socket.getInetAddress());
 		client.start();

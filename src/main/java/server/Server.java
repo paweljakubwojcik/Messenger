@@ -11,9 +11,9 @@ public class Server {
 
 	public Server(String ipAddress) throws Exception {
 		if (ipAddress != null && !ipAddress.isEmpty())
-			this.server = new ServerSocket(0, 1, InetAddress.getByName(ipAddress));
+			this.server = new ServerSocket(6666, 1, InetAddress.getByName(ipAddress));
 		else
-			this.server = new ServerSocket(0, 1, InetAddress.getLocalHost());
+			this.server = new ServerSocket(6666, 1, InetAddress.getLocalHost());
 	}
 
 	private void listen() throws Exception {
@@ -37,7 +37,9 @@ public class Server {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Server app = new Server("10.44.63.66");
+		
+		
+		Server app = new Server("145.239.82.150");
 		System.out.println(
 				"\r\nRunning Server: " + "Host=" + app.getSocketAddress().getHostAddress() + " Port=" + app.getPort());
 
