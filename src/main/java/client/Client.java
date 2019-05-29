@@ -26,7 +26,7 @@ public class Client {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Client client = new Client(InetAddress.getByName(args[0]), Integer.parseInt(args[1]));
+		Client client = new Client(InetAddress.getByName("10.44.63.66"), Integer.parseInt(args[1]));
 
 		System.out.println("\r\nConnected to Server: " + client.socket.getInetAddress());
 		client.start();
