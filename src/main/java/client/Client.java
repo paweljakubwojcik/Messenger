@@ -1,5 +1,7 @@
 package client;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,6 +15,14 @@ public class Client {
 	private BufferedReader in;
 
 	public static void main(String[] args) {
+		new Client();
+	}
+
+	public Client() {
+		// "10.44.63.66"
+		startConnection("127.0.0.1", 6666);
+		String response = sendMessage("hello server");
+		assertEquals("hello client", response);
 	}
 
 	public void startConnection(String ip, int port) {
@@ -21,7 +31,6 @@ public class Client {
 			out = new PrintWriter(clientSocket.getOutputStream(), true);
 			in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -34,7 +43,6 @@ public class Client {
 			resp = in.readLine();
 			return resp;
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -46,7 +54,6 @@ public class Client {
 			out.close();
 			clientSocket.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
